@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  kalamba-game-db:
+    image: mysql:5.7
+    container_name: kalamba-game-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'game'
+      MYSQL_USER: 'remote_root'
+      MYSQL_PASSWORD: 'gv741300'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_ROOT_PASSWORD: 'gv741300'
+    ports:
+      - "3386:3306"
+    healthcheck:
+      test: "/usr/bin/mysql --user=remote_root --password=gv741300 --execute \"SHOW DATABASES;\""
+      interval: 1s
+      timeout: 5s
+      retries: 10
+  kalamba-game-app:
+    restart: on-failure
+    container_name: kalamba-game-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      WAIT_HOSTS: mysql:3306
+    depends_on:
+      - kalamba-game-db
+
+
