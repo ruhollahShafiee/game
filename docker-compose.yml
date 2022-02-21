@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-  kalamba-game-db:
+  k-game-db:
     image: mysql:5.7
-    container_name: kalamba-game-db
+    container_name: k-game-db
     restart: always
     environment:
       MYSQL_DATABASE: 'game'
@@ -18,9 +18,9 @@ services:
       interval: 1s
       timeout: 5s
       retries: 10
-  kalamba-game-app:
+  k-game-app:
     restart: on-failure
-    container_name: kalamba-game-app
+    container_name: k-game-app
     build:
       context: .
       dockerfile: Dockerfile
@@ -29,6 +29,6 @@ services:
     environment:
       WAIT_HOSTS: mysql:3306
     depends_on:
-      - kalamba-game-db
+      - k-game-db
 
 

@@ -8,11 +8,11 @@
 		<version>2.0.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.kalamba</groupId>
+	<groupId>com.k</groupId>
 	<artifactId>game</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>game</name>
-	<description>Technical task test (Kalamba Games)</description>
+	<description>Technical task test (k Games)</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -78,7 +78,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.kalamba.game.GameApplication</mainClass>
+					<mainClass>com.k.game.GameApplication</mainClass>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>

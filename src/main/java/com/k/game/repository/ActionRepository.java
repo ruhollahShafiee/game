@@ -1,0 +1,13 @@
+package com.k.game.repository;
+
+import com.k.game.repository.model.Action;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
+import javax.transaction.Transactional;
+
+
+@Component
+@Transactional
+public interface ActionRepository extends CrudRepository<Action,Integer> {
+
+}
