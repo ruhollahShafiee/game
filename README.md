@@ -23,7 +23,12 @@ OR
 ```shell
 mvn clean install ; cd target ; java -jar game-0.0.1-SNAPSHOT.jar
 ```
+OR
 
+
+``` shell 
+docker-compose up
+```
 The database URL is localhost:3306. if you would like this project to connect to another MySQL server please change the value of spring.datasource.url in the application.properties.
 
 
